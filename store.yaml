@@ -1,0 +1,51 @@
+file_type: csv
+dataset_name: file
+file_name: Parking_Violations_2017
+table_name: edsurv
+inbound_delimiter: ","
+outbound_delimiter: "|"
+skip_leading_rows: 1
+columns: 
+    - SummonsNumber
+    - PlateID
+    - RegistrationState
+    - PlateType
+    - IssueDate
+    - ViolationCode
+    - VehicleBodyType
+    - VehicleMake
+    - IssuingAgency
+      - StreetCode1
+      - StreetCode2
+      - StreetCode3
+      - VehicleExpirationDate
+      - ViolationLocation
+      - ViolationPrecinct
+      - IssuerPrecinct
+      - IssuerCode
+      - IssuerCommand
+      - IssuerSquad
+      - ViolationTime
+      - TimeFirstObserved
+      - ViolationCountry
+      - ViolationInFrontOfOrOpposite
+      - HouseNumber
+      - StreetName
+      - IntersectingStreet
+      - DateFirstObserved
+      - LawSection
+      - SubDivision
+      - ViolationLegalCode
+      - DaysParkingInEffect
+      - FromHoursInEffect
+      - ToHoursInEffect
+      - VehicleColor
+      - UnregisteredVehicle?
+      - VehicleYear
+      - MeterNumber
+      - FeetFromCurb
+      - ViolationPostCode
+      - ViolationDescription
+      - NoStandingorStoppingViolation
+      - HydrantViolation
+      - DoubleParkingViolation

@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 
 Data/Parking_Violations_2017.csv
+Parking_Violation_2017.csv.gz/Parking_2017_compressed.gz
+Parking_Violations_2017.csv

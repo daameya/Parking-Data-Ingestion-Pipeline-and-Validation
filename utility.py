@@ -3,20 +3,27 @@ import os
 import subprocess
 import yaml
 import pandas as pd
-import datetime
+import datetime 
 import gc
 import re
+import yaml
 
 def read_config_file(filepath):
-    with open(filepath, 'r') as f:
+    with open(filepath, 'r') as stream:
         try:
-            return yaml.load(f, Loader=yaml.Loader)
-        except yaml.YAMLError as e:
-            logging.error(e)
+            return yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            logging.error(exc)
 
-def col_header(df, table_config):
+def replacer(string, char):
+    pattern = char + '{2,}'
+    string = re.sub(pattern, char, string)
+    return string
+
+def col_header_val(df,table_config):
+    
     df.columns = df.columns.str.lower()
-    df.columns = df.columns.str.replace('[^\w]','_', regex=True)
+    df.columns = df.columns.str.replace('[^\w]','_',regex=True)
     df.columns = list(map(lambda x: x.strip('_'), list(df.columns)))
     df.columns = list(map(lambda x: replacer(x,'_'), list(df.columns)))
     expected_col = list(map(lambda x: x.lower(),  table_config['columns']))
